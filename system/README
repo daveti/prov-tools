@@ -1,0 +1,28 @@
+#######################################
+#   Provenance Utilities
+#   Authors:  Adam M. Bates (amb@cs.uoregon.edu)
+#             Devin J. Pohly (djpohly@cse.psu.edu)
+#######################################
+
+This file describes the utilities contained in this directory.
+
+1) Compilation
+
+CentOS Dependencies:
+$ sudo yum install gcc kernel-devel libattr-devel libuuid-devel db4-devel zlib-devel
+
+Ubuntu Dependencies:
+$ sudo apt-get install subversion build-essential uuid-dev attr-dev zlib1g-dev
+
+make
+
+2) Utility Descriptions
+
+   pbang (Author: Devin Pohly, Adam Bates): Bootstraps system on initial Hi-Fi/LSM setup.  See Hi-Fi/LPM installation instructions.
+
+   fixbang (Author: Devin Pohly, Adam Bates): "Re-pbangs" the system, but isn't really necessary antmore.  I modified pbang so that it can work on partitions that were already pbanged once.
+   
+   ncred        (Author: Devin Pohly): Purpose unknown.  Depracated.
+   elijah       (Author: Devin Pohly): Purpose unknown.  Depracated.
+   plog2asc.pl  (Author: Devin Pohly): Purpose unknown.  Depracated.
+   	   

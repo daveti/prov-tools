@@ -1,0 +1,8 @@
+#######################################
+#   SNAP Utilities
+#   Authors:  Adam M. Bates (amb@cs.uoregon.edu)
+#######################################
+
+Hi there. This won't compile inside of the git repository. You need to install SNAP (C++) and then copy this directory into the snap/examples directory for it to compile. Cheers!
+
+SNAP is available at http://snap.stanford.edu/.

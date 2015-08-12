@@ -1,0 +1,39 @@
+#######################################
+#   PostGres Utilities
+#   Authors:  Adam M. Bates (amb@cs.uoregon.edu)
+#######################################
+
+Instructions to get the PostGres backend up and running with LPM:
+
+(Follow these steps *outside* of the provenance-aware kernel)
+
+1) Install PostGres and create an empty database named 'provenance'.
+
+2) Build and run the clear_db utility to install the schema (and to reset the database if you ever need to)
+
+3) Build pg_provd, move it to /usr/bin, and set its security.provenance attribute to 'opaque'.
+
+4) Add the following line to /etc/rc.local, commenting out any old uprovd commands:
+
+   pg_provd /sys/kernel/debug/provenance0 5000000
+
+4) To import an existing provenance log (e.g., prov-bang.gz), build and run pg_cat like so:
+
+   pg_cat < ../logs/prov-bang.gz
+
+4) Set the security.provenance attribute on /etc/init.d/postgresql to 'opaque'
+
+Your postgres provenance store should now be up and running!!
+
+Note 1: With SELinux running in enforcing mode, Postgres has issues. Use audit2allow to get Postgres running again.
+
+Note 2: The Postgres/pg_provd store is not as fast as the uprovd store, and therefore makes the system unstable. If you do an intense system operation like compiling the kernel then you will cause a panic because the provenance relay will overflow.
+
+
+Instructions on processing (graph construction) with the PostGres backend:
+
+1) Run pickle_links.py.  This creates a pre-compiled map of the dentries.
+
+2) Run query.py.  You can read more about query.py via:
+
+   python query.py -h

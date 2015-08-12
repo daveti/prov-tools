@@ -1,0 +1,27 @@
+#######################################
+#   Gzip Utilities
+#   Authors:  Adam M. Bates (amb@cs.uoregon.edu)
+#             Devin J. Pohly (djpohly@cse.psu.edu)
+#######################################
+
+This file describes the utilities contained in this directory.
+
+1) Compilation
+
+CentOS Dependencies:
+$ sudo yum install gcc kernel-devel libattr-devel libuuid-devel db4-devel zlib-devel
+
+Ubuntu Dependencies:
+$ sudo apt-get install subversion build-essential uuid-dev attr-dev zlib1g-dev
+
+To install, run: 
+   sudo bash install.sh
+
+You'll need to run as root because we have to change the xattr of the gz_provd binary.
+
+2) Utility Descriptions
+
+   gz_provd (Author: Devin Pohly, Adam Bates): Userspace daemon for provenance recording.  See Hi-Fi/LPM installation instructions.
+
+   gz_cat (Author: Devin Pohly, Adam Bates): Can be used to print a provenance log in readable form, e.g.,
+   	  ./gz_cat < provenance.log

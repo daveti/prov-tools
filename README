@@ -1,0 +1,28 @@
+#######################################
+#   PROVENANCE TOOLS
+#   Authors:  Adam M. Bates (amb@cs.uoregon.edu)
+#             Devin J. Pohly (djpohly@cse.psu.edu)
+#######################################
+
+
+1) There are a number of different utilities in these directories.
+
+./system/pbang -- Needed for the installation of the LPM kernel. See the kernel readme.
+
+./reporters/gz_provd -- Tools for storing provenance using the GZip library
+./reporters/pg_provd -- Tools for storing provenance using PostGreSQL
+./reporters/neo_provd -- Tools for storing provenance using Neo4j
+./reporters/snap_provd -- Tools for storing provenance using the SNAP library
+./reporters/spade_provd -- Tools for converting LPM provenance into SPADE provenance
+
+There are READMES in each subdirectory with more information.
+
+2) Dependencies
+
+Good things to install in order for this code to work:
+
+# yum install make gcc ncurses-devel rpmdevtools yum-utils qt3-devel libXi-devel kernel-devel libattr-devel libuuid-devel db4-devel
+
+or 
+
+# apt-get install subversion build-essential uuid-dev attr-dev zlib1g-dev ncurses-dev
